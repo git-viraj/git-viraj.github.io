@@ -26,10 +26,10 @@ p#remaining {
 <body>
     <p id="upcoming1"></p>
     <p id="cd1"></p>
-    <br><br>
+    <br><br><br>
     <p id="upcoming2"></p>
     <p id="cd2"></p>
-    <br><br>
+    <br><br><br>
     <p id="remaining"></p>    
     <br><br>
 
@@ -88,8 +88,8 @@ p#remaining {
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element 
-    document.getElementById("upcoming1").innerHTML= "Agla Bday hai <b>"+arr[0]+"</b> ka, on "+(obj[arr[0]]).slice(0,6)+"------------";
-    document.getElementById("cd1").innerHTML="Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
+    document.getElementById("upcoming1").innerHTML= "Agla Bday hai <b>"+arr[0]+"</b> ka, <br>on "+(obj[arr[0]]).slice(0,6)+"------------";
+    document.getElementById("cd1").innerHTML="<br>Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
 
 
 
@@ -109,8 +109,8 @@ p#remaining {
     var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
 
     // Result is output to the specific element 
-    document.getElementById("upcoming2").innerHTML= "Uske baad  hai <b>"+arr[1]+"</b> , on "+(obj[arr[1]]).slice(0,6)+"------------";
-    document.getElementById("cd2").innerHTML="Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
+    document.getElementById("upcoming2").innerHTML= "Uske baad  hai <b>"+arr[1]+"</b> , <br>on "+(obj[arr[1]]).slice(0,6)+"------------";
+    document.getElementById("cd2").innerHTML="<br>Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
 
 //------------------------------------------------------------------------------------------------------------------------------------------------------------
 
