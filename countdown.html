@@ -1,0 +1,130 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+p#upcoming1,#upcoming2 {
+  display: inline;
+  font-size: 40px;
+  margin-top: 0px;
+}
+p#cd1,#cd2 {
+  display: inline;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+p#remaining {
+  display: inline;
+  font-size: 30px;
+  margin-top: 0px;
+}
+
+
+</style>
+</head>
+<body>
+    <p id="upcoming1"></p>
+    <p id="cd1"></p>
+    <br><br>
+    <p id="upcoming2"></p>
+    <p id="cd2"></p>
+    <br><br>
+    <p id="remaining"></p>    
+    <br><br>
+
+
+
+    <script>
+         
+    // The data/time we want to countdown to
+    var obj={
+
+        "amartyab":"Feb 10, 2022 00:00:00",
+        "yashp":"Feb 17, 2022 00:00:00",
+        "mithileshg":"Mar 01, 2022 00:00:00",
+        "pratikm":"Mar 13, 2022 00:00:00",
+        "rupalh":"May 01, 2022 00:00:00",
+        "adarshp":"May 03, 2022 00:00:00",
+        "siddhantr":"Jul 14, 2022 00:00:00",
+        "pranavk":"Sep 22, 2022 00:00:00",
+        "shivanshd":"oct 04, 2022 00:00:00",
+        "raunakb":"oct 11, 2022 00:00:00",
+        "yashk":"Nov 11, 2022 00:00:00",
+        "sagark":"Nov 22, 2022 00:00:00",
+        "virajd":"Dec 10, 2022 00:00:00",
+
+    };
+    
+
+    
+    var now = new Date().getTime();
+
+    var arr=[];
+
+    for(let name in obj){
+            if(now<new Date(obj[name]).getTime()) {
+                // document.getElementById("heading").innerHTML= document.getElementById("heading").innerHTML+" "+name;
+                arr.push(name);
+            }
+    }
+
+
+    // Run myfunc every second
+    var myfunc = setInterval(function() {
+
+        
+//-----------------------------------------------------------------------------------------------------------------------------------------------------
+
+    var countDownDate1 =new Date(obj[arr[0]]).getTime()
+    var now = new Date().getTime();
+    var timeleft = countDownDate1 - now;
+    
+
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+    // Result is output to the specific element 
+    document.getElementById("upcoming1").innerHTML= "Agla Bday hai <b>"+arr[0]+"</b> ka, on "+(obj[arr[0]]).slice(0,6)+"------------";
+    document.getElementById("cd1").innerHTML="Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
+
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+    var countDownDate2 =new Date(obj[arr[1]]).getTime()
+    var now = new Date().getTime();
+    var timeleft = countDownDate2 - now;
+    
+
+    // Calculating the days, hours, minutes and seconds left
+    var days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+
+    // Result is output to the specific element 
+    document.getElementById("upcoming2").innerHTML= "Uske baad  hai <b>"+arr[1]+"</b> , on "+(obj[arr[1]]).slice(0,6)+"------------";
+    document.getElementById("cd2").innerHTML="Bday in - "+ days + "d "+hours + "h "+minutes + "m "+seconds + "s ";
+
+//------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+var str="And then <br>";
+for(var i=2; i<arr.length; i++){
+    str=str+arr[i]+" -> "+(obj[arr[i]]).slice(0,6)+"<br>";
+
+}
+document.getElementById("remaining").innerHTML=str;
+
+
+
+    
+    }, 1000);
+    </script>
+</body>
+</html>
